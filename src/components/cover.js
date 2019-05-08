@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import start from '../media/start.png';
+import loading from '../media/loading.png';
 import withRoot from '../withRoot';
 
 import { connect } from 'react-redux';
@@ -48,12 +49,14 @@ class Cover extends React.Component {
         super(props);
 
         this.state= {
-            info: null
+            info: null,
+            loading: false,
         }
 
     };
 
     handleInfo = () => {
+        this.setState({loading: true});
         fetch('https://cryptic-journey-75247.herokuapp.com/info', {
             method: 'GET',
             mode: 'cors',
@@ -62,12 +65,15 @@ class Cover extends React.Component {
             return res.json()
         }).then(data =>
         {
-            this.setState({info: data},
+            this.setState({info: data, loading: false},
             this.props.passInfo(data))
         }).then(
             () => store.dispatch(startApp())
         ).catch(
-            err =>  alert('Something is wrong')
+            err =>  {
+                alert('Something is wrong');
+                this.setState({loading: false})
+            }
         )};
 
 
@@ -77,26 +83,29 @@ class Cover extends React.Component {
         return (
             <div className={classes.root} style={this.props.style}>
                 <Typography className={classes.title}>
-                    Hi, Welcome to SmartTest!
+                    {this.state.loading === true? "Fetching data. Please wait." : "Hi, Welcome to SmartTest!"}
                 </Typography>
 
                 <br />
 
                 <Typography className={classes.subtitle} style={{width: '600px'}}>
-                    SmartTest is a smart tool for teachers to easily generate tests for students leveraging
-                    students’ answers. Try it now!
+                    {this.state.loading === true? ""
+                        : " SmartTest is a smart tool for teachers to easily generate tests for students leveraging students’ answers. Try it now! "}
+
                 </Typography>
 
                 <br />
 
                 <div className={classes.image}>
-                    <img src={start} alt='Display' />
+                    <img src={this.state.loading === true? loading: start}
+                         alt='Display' />
                 </div>
 
                 <br />
 
 
-                <Button className={classes.button} onClick={() => this.handleInfo()}>
+                <Button className={classes.button}
+                        onClick={this.state.loading === true? null: () => this.handleInfo()}>
                     Start
                 </Button>
 
