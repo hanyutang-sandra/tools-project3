@@ -148,12 +148,7 @@ class Uploadnew extends React.Component {
                 </div>
 
                 <br />
-
-                <Typography className={classes.authors}>
-                    © 2019. A Work Crafted by Jiasi Tan & Hanyu Tang
-                </Typography>
-
-
+                
             </div>
         )
     }

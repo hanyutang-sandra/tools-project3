@@ -84,7 +84,7 @@ function rightorwrong(result) {
 
 function title(result){
     if (result === 'False'){
-        return 'This is a correct answer: '
+        return 'Explanation: '
     }else{
         return 'This is an alternative correct answer: '
     }
@@ -166,7 +166,8 @@ class Feedback extends React.Component {
         return (
             <div className={classes.root}>
                 <div className={classes.feedback}>
-                    <Typography className={classes.title} style={{fontSize: '30px'}}>
+                    <Typography className={classes.title}
+                                style={this.props.feedbackData.result === 'False'? {color: '#8D3A3C', fontSize: '30px'} : {color: '#80DEEA', fontSize: '30px' }}>
                         {rightorwrong(this.props.feedbackData.result)}
                     </Typography>
 
@@ -177,7 +178,7 @@ class Feedback extends React.Component {
 
                     <br />
                     <Button className={classes.button} onClick={this.getNextTest}>
-                        Next
+                        {this.state.counter === 0? "Next Question":"Try Again"}
                     </Button>
 
                 </div>

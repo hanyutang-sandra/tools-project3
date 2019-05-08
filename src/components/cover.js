@@ -28,6 +28,8 @@ const styles = theme => ({
 
     image: theme.overrides.image,
 
+    image_img: theme.overrides.image_img,
+
     button: theme.overrides.button,
 
     authors: theme.overrides.authors
@@ -67,6 +69,7 @@ class Cover extends React.Component {
         {
             this.setState({info: data, loading: false},
             this.props.passInfo(data))
+
         }).then(
             () => store.dispatch(startApp())
         ).catch(
@@ -97,7 +100,7 @@ class Cover extends React.Component {
                 <br />
 
                 <div className={classes.image}>
-                    <img src={this.state.loading === true? loading: start}
+                    <img className={classes.image_img} src={this.state.loading === true? loading: start}
                          alt='Display' />
                 </div>
 
@@ -115,6 +118,7 @@ class Cover extends React.Component {
                 <Typography className={classes.authors}>
                     © 2019. A Work Crafted by Jiasi Tan & Hanyu Tang
                 </Typography>
+
             </div>
         )
     }

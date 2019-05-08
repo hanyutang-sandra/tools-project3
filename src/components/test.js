@@ -122,9 +122,6 @@ class Test extends React.Component {
                               ref={this.state.ref}
                     />:null}
 
-                <Typography className={classes.authors}>
-                    © 2019. A Work Crafted by Jiasi Tan & Hanyu Tang
-                </Typography>
             </div>
 
         )

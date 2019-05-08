@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import Cover from './cover';
 import Upload from "./upload";
 import Test from "./test";
@@ -13,8 +14,11 @@ import compose from 'recompose/compose';
 
 
 const styles = theme => ({
-    Cover: {
-    }
+    root: {
+        textAlign: 'center',
+    },
+
+    authors: theme.overrides.authors
 });
 
 const mapStateToProps = state => ({
@@ -60,6 +64,7 @@ class Page extends React.Component {
                 {this.props.page === 'testPage' || this.props.page === 'feedbackPage'? <Test testData = {this.state.testData} /> : null}
 
                 {this.props.page === 'endPage'? <End />: null}
+
             </div>
         )
     }

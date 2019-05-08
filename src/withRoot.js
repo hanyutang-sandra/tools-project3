@@ -28,7 +28,7 @@ const theme = createMuiTheme({
         subtitle: {
             display: 'inline-block',
             fontSize: '21.32px',
-            color: grey[400],
+            color: '#5b5b5b',
             fontWeight: 300,
             marginTop: '0.7rem',
         },
@@ -38,6 +38,11 @@ const theme = createMuiTheme({
             width: '338px',
             overflow: 'hidden',
             marginTop: '2rem'
+        },
+
+        image_img: {
+            width: '100%',
+            height: 'auto'
         },
 
         button: {
@@ -60,13 +65,13 @@ const theme = createMuiTheme({
 
         },
 
-
         authors: {
             display: 'inline-block',
             fontSize: '12.19px',
             color: grey[400],
             fontWeight: 300,
-            marginTop: '5rem'
+            marginTop: '3rem',
+
         }
 
 

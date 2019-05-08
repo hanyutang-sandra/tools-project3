@@ -27,6 +27,8 @@ const styles = theme => ({
 
     image: theme.overrides.image,
 
+    image_img: theme.overrides.image_img,
+
     button: theme.overrides.button,
 
     authors: theme.overrides.authors
@@ -71,7 +73,7 @@ class End extends React.Component {
                 <br />
 
                 <div className={classes.image}>
-                    <img src={end} alt='Display' />
+                    <img className={classes.image_img} src={end} alt='Display' />
                 </div>
 
                 <br />
@@ -87,6 +89,7 @@ class End extends React.Component {
                 <Typography className={classes.authors}>
                     © 2019. A Work Crafted by Jiasi Tan & Hanyu Tang
                 </Typography>
+
             </div>
         )
     }

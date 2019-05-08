@@ -4,8 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import pink from '@material-ui/core/colors/pink'
-import green from '@material-ui/core/colors/green'
 
 import { connect } from 'react-redux';
 import {getFeedback} from "../redux/actions";
@@ -153,15 +151,18 @@ class Testwords extends React.Component {
         ).then(
             [...this.choiceSec.current.childNodes].forEach(elem => {
                 elem.style.backgroundColor = '#f1f1f1';
-                elem.classList.remove('selected');
                 })
         ).then(() => {
             this.state.feedbackData.generalright.forEach(i => {
-                [...this.choiceSec.current.childNodes][parseInt(i)].style.backgroundColor = green[100]
+                [...this.choiceSec.current.childNodes][parseInt(i)].style.border = '4px solid #80DEEA'
             });
 
             this.state.feedbackData.generalwrong.forEach(i => {
-                [...this.choiceSec.current.childNodes][parseInt(i)].style.backgroundColor = pink[50]
+                [...this.choiceSec.current.childNodes][parseInt(i)].style.border = '4px solid #8d3a3c'
+            });
+            [...document.querySelectorAll('.selected')].map(elem => {
+                elem.style.backgroundColor = '#FFF2D2';
+                elem.classList.remove('selected');
             })
         }).catch(err =>  alert('Cannot get feedback now.'))
     };
@@ -192,7 +193,7 @@ class Testwords extends React.Component {
                     {this.props.testData.answer.map((choice, index) => (
                         <Paper className={classes.choice}
                                onClick={this.props.page === 'testPage'? (ev, type) => this.handleClick(ev, this.props.testData.type):null}
-                               style={this.props.page === 'testPage'? {backgroundColor: '#f1f1f1'} : null}
+                               style={this.props.page === 'testPage'? {border: 'none', background: '#f1f1f1'} : null}
                                key={index}>
                             <Typography className={classes.subtitle} style={{marginTop: 0, fontSize: '17px'}}>{choice}</Typography>
                         </Paper>

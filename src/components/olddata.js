@@ -98,19 +98,16 @@ class Olddata extends React.Component {
                     <div>
                         <Button className={classes.button} variant="outlined"
                                 style={{backgroundColor: 'white', marginRight: '0.5rem'}} onClick={this.props.uploadForm}>
-                            Upload New
+                            Upload New Files
                         </Button>
                         <Button className={classes.button} style={{marginRight: '0.5rem'}} onClick={() => this.handleStartTest()}>
-                            Generate
+                            Generate Using Current Files
                         </Button>
 
                     </div>
 
                     <br />
 
-                    <Typography className={classes.authors}>
-                        © 2019. A Work Crafted by Jiasi Tan & Hanyu Tang
-                    </Typography>
                 </div>
             </div>
         )
