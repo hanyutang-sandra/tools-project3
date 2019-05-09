@@ -87,7 +87,7 @@ class End extends React.Component {
                 <br />
 
                 <Typography className={classes.authors}>
-                    © 2019. A Work Crafted by Jiasi Tan & Hanyu Tang
+                    © 2019. Made by Jiasi Tan & Hanyu Tang
                 </Typography>
 
             </div>

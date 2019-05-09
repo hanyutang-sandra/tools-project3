@@ -106,17 +106,18 @@ class Cover extends React.Component {
 
                 <br />
 
-
-                <Button className={classes.button}
-                        onClick={this.state.loading === true? null: () => this.handleInfo()}>
-                    Start
-                </Button>
-
+                {this.state.loading === false?
+                    <Button className={classes.button}
+                            onClick={this.state.loading === true? null: () => this.handleInfo()}>
+                        Start
+                    </Button>
+                    : null
+                }
 
                 <br />
 
                 <Typography className={classes.authors}>
-                    © 2019. A Work Crafted by Jiasi Tan & Hanyu Tang
+                    © 2019. Made by Jiasi Tan & Hanyu Tang
                 </Typography>
 
             </div>

@@ -110,8 +110,8 @@ class Uploadnew extends React.Component {
                     </Typography>
 
                     <Typography className={classes.subtitle} style={{width: '1000px'}}>
-                        Simply by uploading a csv file contains questions,
-                        and a csv files with initial sets of answers with grading,
+                        Simply by uploading <b> a csv file </b> contains questions,
+                        and <b> a csv files </b> with initial sets of answers with grading,
                         this smart tool will help you generate more questions which help students practice more!
                     </Typography>
 

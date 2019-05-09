@@ -167,7 +167,7 @@ class Feedback extends React.Component {
             <div className={classes.root}>
                 <div className={classes.feedback}>
                     <Typography className={classes.title}
-                                style={this.props.feedbackData.result === 'False'? {color: '#8D3A3C', fontSize: '30px'} : {color: '#80DEEA', fontSize: '30px' }}>
+                                style={this.props.feedbackData.result === 'False'? {color: '#8D3A3C', fontSize: '35px'} : {color: '#80DEEA', fontSize: '50px' }}>
                         {rightorwrong(this.props.feedbackData.result)}
                     </Typography>
 
